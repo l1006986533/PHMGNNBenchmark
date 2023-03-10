@@ -21,7 +21,14 @@ class GCN(torch.nn.Module):
 
     def forward(self, data):
         x, edge_index, edge_weight = data.x, data.edge_index, data.edge_attr
-
+        # out=x.tolist()
+        # with open("/Users/liao/code/20230309/PHMGNNBenchmark/x.txt","w") as fp:
+        #     for i in out:
+        #         for j in i:
+        #             fp.write(str(j) +" ")
+        #         fp.write('\n')
+        # print(edge_index.tolist())
+        # print(edge_weight.tolist())
         x = self.GConv1(x, edge_index, edge_weight)
         x = self.bn1(x)
         x = F.relu(x)

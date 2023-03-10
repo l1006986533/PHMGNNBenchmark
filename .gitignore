@@ -1,0 +1,6 @@
+__pycache__/
+data/
+.DS_Store
+tmp.py
+checkpoint/
+tmp*
